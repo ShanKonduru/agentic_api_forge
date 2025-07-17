@@ -47,7 +47,7 @@ View and download the generated code
 ### Architecture
 
 Agentic API Forge follows an agent-based architecture:
-```mermide
+```mermaid
 flowchart LR
     UI[Streamlit UI] --> Coordinator[Coordinator Agent]
     Coordinator --> Parser[RAML Parser]
