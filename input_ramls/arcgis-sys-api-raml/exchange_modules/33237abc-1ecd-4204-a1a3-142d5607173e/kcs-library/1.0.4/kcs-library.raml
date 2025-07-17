@@ -1,0 +1,66 @@
+#%RAML 1.0 Library
+
+securitySchemes:
+  basic:
+    description: |
+      Each request must contain the headers necessary for basic authentication.
+    type: Basic Authentication
+
+types:
+  kcsError: !include exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/kcs-error-datatype/1.0.0/kcs-error-datatype.raml
+  email-request: !include exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/kcs-email-sys-datatype/1.0.0/kcs-email-sys-datatype.raml
+
+traits:
+  security:
+    securedBy: [basic]
+  clientIdSecurity: !include exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/kcs-clientid-security/1.0.0/kcs-clientid-security.raml
+  trackable: !include exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/kcs-trackable-trait/1.0.0/kcs-trackable-trait.raml
+  returns-501:
+    responses:
+      501:
+        body:
+          application/json:
+            type: kcsError
+            example: !include exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/kcs-returns-501-example/1.0.0/kcs-returns-501-example.raml
+  returns-500:
+    responses:
+      500:
+        body:
+          application/json:
+            type: kcsError
+            example: !include exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/kcs-returns-500-example/1.0.0/kcs-returns-500-example.raml
+  returns-415:
+    responses:
+      415:
+        body:
+          application/json:
+            type: kcsError
+            example: !include exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/kcs-returns-415-example/1.0.0/kcs-returns-415-example.raml
+  returns-406:
+    responses:
+      406:
+        body:
+          application/json:
+            type: kcsError
+            example: !include exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/kcs-returns-406-example/1.0.0/kcs-returns-406-example.raml
+  returns-405:
+    responses:
+      405:
+        body:
+          application/json:
+            type: kcsError
+            example: !include exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/kcs-returns-405-example/1.0.0/kcs-returns-405-example.raml
+  returns-404:
+    responses:
+      404:
+        body:
+          application/json:
+            type: kcsError
+            example: !include exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/kcs-returns-404-example/1.0.0/kcs-returns-404-example.raml
+  returns-400:
+    responses:
+      400:
+        body:
+          application/json:
+            type: kcsError
+            example: !include exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/kcs-returns-400-example/1.0.0/kcs-returns-400-example.raml

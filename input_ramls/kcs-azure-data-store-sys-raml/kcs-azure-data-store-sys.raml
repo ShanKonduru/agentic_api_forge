@@ -1,0 +1,68 @@
+#%RAML 1.0
+title: kcs-azure-data-store-sys
+version: v1
+
+baseUri: http://localhost:8081/kcs-azure-data-store-sys/api
+
+documentation:
+- title: Azure API for Data Warehouse System API definition
+  content: azure-data-store-sys API wrapping all communications with Azure Data Warehouse and Data
+
+mediaType: application/json
+
+
+/v1:
+  /railcars:
+   /{originalCarMark}:
+    /{originalCarNumber}:
+      /repair/status:
+       post:
+        displayName: Railcar Repair Status
+        description: Posting new Railcar status
+        protocols: HTTP
+        body:
+         application/json:
+        responses:
+         201:
+          description: Created successfully.
+          body:
+           application/json:
+   /repair:
+    /dwell/report:
+     post:
+      displayName: Railcar Repair Dwell Report
+      description: Posting new Railcar Dwell Report
+      protocols: HTTP
+      body:
+        application/json:
+      responses:
+        201:
+          description: Created successfully.
+          body:
+           application/json:
+   /scores:
+     post:
+      displayName: Railcars Scores
+      description: Posting new railcar scores to datalake
+      protocols: HTTP
+      body:
+        application/json:
+      responses:
+        201:
+          description: Created successfully.
+          body:
+           application/json:
+  /trains:
+   /{trainid}:
+    /inspections:
+     post:
+      displayName: Railcar inspections
+      description: Posting new Railcar inspections
+      protocols: HTTP
+      body:
+        application/json:
+      responses:
+        201:
+          description: Created successfully.
+          body:
+           application/json:

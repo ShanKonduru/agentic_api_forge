@@ -1,0 +1,20 @@
+{
+  "Name": "Hima ABC123",
+  "Type": "Customer",
+  "Phone": "555-555-5555",
+  "ShippingStreet": "1919 TORRANCE BLVD",
+  "ShippingCity": "TORRANCE",
+  "ShippingState": "CA",
+  "ShippingCountry": "US",
+  "ShippingPostalCode": "90501",
+  "BillingStreet": "1919 TORRANCE BLVD",
+  "BillingCity": "TORRANCE",
+  "BillingState": "CA",
+  "BillingCountry": "US",
+  "BillingPostalCode": "90501",
+  "Fax": "253-256-6985",
+  "Entity_Type__c": "Company",
+  "TaxID__c": "UME110621AR9",
+  "Company_Email__c": "abc@company.com",
+  "CMF__c": "051256"
+}

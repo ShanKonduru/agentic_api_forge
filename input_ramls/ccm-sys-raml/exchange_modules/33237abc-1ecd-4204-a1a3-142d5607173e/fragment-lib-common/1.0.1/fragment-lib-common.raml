@@ -1,0 +1,56 @@
+#%RAML 1.0 Library
+
+securitySchemes:
+  basic: !include /exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/fragment-sec-basic/1.0.0/fragment-sec-basic.raml
+
+types:
+  error: !include /exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/fragment-error-response/1.0.0/fragment-dt-error-response.raml
+  errorsCollection:
+    type: object
+    xml:
+      name: root
+    additionalProperties: false
+    properties:
+      errors:
+        type: error[]
+        xml:
+          wrapped: true # serialize it into its own <errors>...</errors> XML element
+
+traits: 
+  basicSecurity:
+    securedBy:
+      - basic
+  errorResponsesJson:
+    responses: 
+      400:
+        description: Bad request
+        body:
+          application/problem+json:
+            type: errorsCollection
+      500:
+        description: Unable to process due to internal error
+        body:
+          application/problem+json:
+            type: errorsCollection
+  errorResponsesXml:
+    responses: 
+      400:
+        description: Bad request
+        body: 
+          application/problem+xml:
+            type: errorsCollection
+      500:
+        description: Unable to process due to internal error
+        body:
+          application/problem+xml:
+            type: errorsCollection
+  traceabilityEnabled:
+    headers:
+      X-Correlation-ID:
+        description: Unique message identifier for end-to-end traceability of messages.
+        type: string
+        minLength: 1
+        maxLength: 50
+        example: 9cf32672-4f0b-4e8b-b988-40c13aae85b4
+        required: false
+

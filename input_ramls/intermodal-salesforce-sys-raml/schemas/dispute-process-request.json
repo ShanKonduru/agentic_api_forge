@@ -1,0 +1,20 @@
+{			
+    "cmfNumber": "037497",			
+    "eqpInitial": "JBHZ",			
+    "eqpNumber": "136524",			
+    "currentLocation": "INTL FREIGHT GATEWY,MO",			
+    "waybillNumber": "845698",			
+    "waybillDate": "2020-04-01",			
+    "derampTmstmp": "2020-04-01-16.17.00",			
+    "ntfTmstmp": "2020-04-02-00.00.00",			
+    "currentStorageDue": "120.50",			
+    "nbrStrgDays": "10",			
+    "currency": "USD",			
+    "disputeReason": "I don't think this is the right amount I have to pay for the container. I believe I have to pay less money.",			
+    "firstName": "DAVID",			
+    "lastName": "SMITH",			
+    "contactEmail": "DAVID.SMITH@JBHU.COM",			
+    "additionalEmail": "ALIZABETH.FERNANDEZ@JBHU.COM",			
+    "claimSubmitDatetime": "2020-04-27-16.30.00"		
+}			
+		

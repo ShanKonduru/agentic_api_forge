@@ -1,0 +1,57 @@
+#%RAML 1.0
+title: arcgis-sys-api
+baseUri: https://localhost:10091/arcgis-sys-api/api
+protocols:
+  - HTTPS
+mediaType: 
+  - application/json
+types:
+  ping-response:
+     type: !include datatypes/ping-response.raml
+     example: !include examples/ping-response.raml
+uses:
+  lib: exchange_modules/33237abc-1ecd-4204-a1a3-142d5607173e/kcs-library/1.0.4/kcs-library.raml
+ 
+/v1:
+  /retrieve_spatialdata:
+    is: [lib.trackable,lib.security,lib.returns-400,lib.returns-404,lib.returns-405,lib.returns-406,lib.returns-415,lib.returns-500,lib.returns-501]
+    displayName: Retrieve Spatial data from ArcGIS
+    post: 
+      description: This API is used to retrieve the spatial data from ArcGIS
+      body:
+        application/json:
+      responses:
+        201:
+          body:
+            application/json:
+  
+  /mileage_translator:
+    is: [lib.trackable,lib.security,lib.returns-400,lib.returns-404,lib.returns-405,lib.returns-406,lib.returns-415,lib.returns-500,lib.returns-501]
+    displayName: Retrieve Mileage data from ArcGIS for given latitude and longitude
+    post: 
+      description: This API is used to retrieve the MileageTranslator data from ArcGIS
+      body:
+        application/json:
+      responses:
+        201:
+          body:
+            application/json:
+  /token:
+    is: [lib.trackable,lib.security,lib.returns-400,lib.returns-404,lib.returns-405,lib.returns-406,lib.returns-415,lib.returns-500,lib.returns-501]
+    displayName: Get the token from GIS
+    get:
+      description: Return a token response.
+      responses:
+        200:
+          body:
+            application/json:
+  /ping:
+    is: [lib.trackable,lib.security,lib.returns-400,lib.returns-404,lib.returns-405,lib.returns-406,lib.returns-415,lib.returns-500,lib.returns-501]
+    displayName: Heath Check
+    get:
+      description: Return a standard response.
+      responses:
+        200:
+          body:
+            application/json:
+              type: ping-response
