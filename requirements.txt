@@ -1,0 +1,6 @@
+# List your project dependencies here
+dotenv
+pytest
+streamlit
+autogen
+pyyaml
