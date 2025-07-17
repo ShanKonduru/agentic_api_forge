@@ -73,7 +73,7 @@ Flask API Generator: Generates Flask API code with SQLAlchemy models
 Test Code Generator: Generates PyTest code for API testing
 
 ### Project Structure
-
+```code
 agentic-api-forge/
 
 ├── main.py                  # Main application entry point
@@ -111,6 +111,7 @@ agentic-api-forge/
     ├── __init__.py
     
     └── streamlit_app.py     # Streamlit UI
+```
     
 
 ### Example
