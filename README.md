@@ -47,19 +47,21 @@ View and download the generated code
 ### Architecture
 
 Agentic API Forge follows an agent-based architecture:
+```mermide
+flowchart LR
+    UI[Streamlit UI] --> Coordinator[Coordinator Agent]
+    Coordinator --> Parser[RAML Parser]
+    Coordinator --> ClientGen[Python Client Generator]
+    Coordinator --> FlaskGen[Flask API Generator]
+    Coordinator --> TestGen[Test Code Generator]
 
-┌─────────────┐     ┌─────────────┐     ┌─────────────────┐
-│ Streamlit UI│────▶│ Coordinator │────▶│ RAML Parser     │
-└─────────────┘     │   Agent     │     └─────────────────┘
-                    └──────┬──────┘
-                           │
-                           ▼
-         ┌─────────────────┬─────────────────┐
-         │                 │                 │
-┌────────▼─────────┐┌──────▼────────┐┌───────▼────────┐
-│ Python Client    ││  Flask API    ││  Test Code     │
-│   Generator      ││  Generator    ││  Generator     │
-└──────────────────┘└───────────────┘└────────────────┘
+    style UI fill:#f9f,stroke:#333,stroke-width:2px
+    style Coordinator fill:#bbf,stroke:#333,stroke-width:2px
+    style Parser fill:#bfb,stroke:#333,stroke-width:2px
+    style ClientGen fill:#fbb,stroke:#333,stroke-width:2px
+    style FlaskGen fill:#fbb,stroke:#333,stroke-width:2px
+    style TestGen fill:#fbb,stroke:#333,stroke-width:2px
+```
 
 ### Components
 
