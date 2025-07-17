@@ -75,24 +75,43 @@ Test Code Generator: Generates PyTest code for API testing
 ### Project Structure
 
 agentic-api-forge/
+
 ├── main.py                  # Main application entry point
+
 ├── requirements.txt         # Python dependencies
+
 ├── agents/
+
 │   ├── __init__.py
+
 │   ├── coordinator.py       # Coordinator agent
+
 │   └── base.py              # Base agent class
+
 ├── core/
+
 │   ├── __init__.py
+
 │   ├── parser.py            # RAML parser
+
 │   └── generators/
+
 │       ├── __init__.py
+
 │       ├── base.py          # Base code generator
+
 │       ├── client.py        # Python client generator
+
 │       ├── flask.py         # Flask API generator
+
 │       └── test_generator.py # Test code generator
+
 └── ui/
+
     ├── __init__.py
+    
     └── streamlit_app.py     # Streamlit UI
+    
 
 ### Example
 
