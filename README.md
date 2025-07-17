@@ -97,7 +97,7 @@ agentic-api-forge/
     
 
 ### Example
-
+```json
 Input: RAML File
 #%RAML 1.0
 title: Example API
@@ -139,6 +139,8 @@ mediaType: application/json
             application/json:
               example: |
                 {"id": 1, "name": "John Doe", "email": "john@example.com"}
+
+```
 
 ### Output: Generated Code
 
